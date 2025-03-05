@@ -30,7 +30,7 @@ TaskManagerApp allows users to:
 - npm install -g @angular/cli@17
 
 ### Clone the Repository
-- git clone https://github.com/YourUsername/TaskManagerApp.git 
+- git clone https://github.com/satvik031/TaskManagerApp.git 
 - cd TaskManagerApp
 
 ### Install Dependencies
