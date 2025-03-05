@@ -1,27 +1,60 @@
-# TaskManagerApp
+# Task Manager App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.12.
+A simple Task Manager web application built with Angular 17, SCSS, and Bootstrap. This project demonstrates core CRUD functionality for managing tasks, along with extra features such as filtering, sorting, inline editing, undo deletion, and toast notifications.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+TaskManagerApp allows users to:
+- **Add Tasks:** Create tasks with a title, due date, and priority.
+- **View Tasks:** Display tasks in a table (or card) view with details such as title, due date, priority, and completion status.
+- **Edit Tasks:** Inline editing of task titles.
+- **Toggle Completion:** Mark tasks as complete or incomplete using a checkbox.
+- **Delete Tasks & Undo:** Remove tasks with the ability to undo the last deletion.
+- **Filter and Sort:** Filter tasks by status (all, completed, incomplete) and sort by due date, priority, or title.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **CRUD Operations:** Create, read, update, and delete tasks.
+- **Due Date and Priority:** Assign a due date and priority (High, Medium, Low) to tasks.
+- **Real-time Updates:** Uses Angular services and RxJS to ensure UI updates immediately upon changes.
+- **Filtering & Sorting:** Easily filter tasks by status and sort by various criteria.
+- **Responsive UI:** Built with Bootstrap 5 to ensure a mobile-friendly, responsive interface.
 
-## Build
+## Setup Instructions
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
+- **Node.js & npm:** Ensure you have Node.js (v14 or above) and npm installed.
 
-## Running unit tests
+- **Angular CLI:** Install or update Angular CLI to v17 (or the desired version).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- npm install -g @angular/cli@17
 
-## Running end-to-end tests
+### Clone the Repository
+- git clone https://github.com/YourUsername/TaskManagerApp.git 
+- cd TaskManagerApp
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Install Dependencies
+- npm install
 
-## Further help
+### Bootstrap & Prettier Setup
+- **Bootstrap:** The project uses Bootstrap 5 for styling. Its CSS and JS are included via the angular.json configuration.
+- **Prettier:** Code formatting is managed with Prettier. Configuration details can be found in the .prettierrc file.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Running Prettier
+- To run the tests, execute: npm run prettier
+
+### Running the Application
+- Start the development server with the following command: ng serve
+
+- Open your browser and navigate to http://localhost:4200 to view the application.
+
+### Running Tests
+- The application uses Jasmine/Karma for unit testing. 
+
+- To run the tests, execute: ng test
+
+
+
+
+
+

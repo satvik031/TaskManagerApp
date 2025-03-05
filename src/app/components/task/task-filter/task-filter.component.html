@@ -1,0 +1,38 @@
+<div class="container mt-3 mb-4 px-0">
+    <div class="row g-2 align-items-center">
+        <div class="col">
+          <h4 class="page-title">
+            Filter and Sort Tasks
+          </h4>
+        </div>
+      </div>
+  <div class="row mb-3">
+    <div class="col-md-4 pe-2">
+      <label for="filterSelect" class="form-label">Filter Tasks:</label>
+      <select
+        id="filterSelect"
+        name="filterSelect"
+        class="form-select"
+        (change)="onFilterChangeEvent($event)"
+      >
+        <option value="all" selected>All</option>
+        <option value="completed">Completed</option>
+        <option value="incomplete">Incomplete</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="sortSelect" class="form-label">Sort Tasks:</label>
+      <select
+        id="filterSelect"
+        name="sortSelect"
+        class="form-select"
+        (change)="onSortChangeEvent($event)"
+      >
+        <option value="none" selected>None</option>
+        <option value="dueDate">Due Date</option>
+        <option value="priority">Priority</option>
+        <option value="title">Title</option>
+      </select>
+    </div>
+  </div>
+</div>

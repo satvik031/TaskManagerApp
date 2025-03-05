@@ -1,29 +1,36 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  it(`should have the 'TaskManagerApp' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('TaskManagerApp');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
+  it('should display the title in the navbar', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, TaskManagerApp');
+    const navbarBrand = compiled.querySelector('.navbar-brand');
+    expect(navbarBrand?.textContent).toContain('Task Manager App');
+  });
+
+  it('should render TaskInputComponent and TaskListComponent', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const taskInputEl = compiled.querySelector('app-task-input');
+    const taskListEl = compiled.querySelector('app-task-list');
+
+    expect(taskInputEl).toBeTruthy();
+    expect(taskListEl).toBeTruthy();
   });
 });
