@@ -53,11 +53,7 @@ TaskManagerApp allows users to:
 
 - To run the tests, execute: ng test
 
-### Link for Video Demonstartion 
-https://www.loom.com/share/a531ab618ee14a84a9d60d497126197c?sid=866d0515-78f3-4aec-a65d-20ebf9b0d201
+### Link for Video Demonstartion
 
-
-
-
-
+- https://www.loom.com/share/8262330fdb8b410e999f95bf38b6c4b5?sid=912b2742-d03f-484b-a879-a8f23af56199
 

@@ -3,14 +3,40 @@
       <div class="d-flex flex-column">
         <ng-container *ngIf="!editing; else editTemplate">
           <div class="d-flex flex-column">
-            <span class="ms-2 text-break fw-bold">Title: <span class="fw-normal">{{ task.title }}</span></span>
-            <span class="ms-2 fw-bold">Status: <span class="fw-normal">{{ task.completed ? 'Complete' : 'Incomplete' }}</span></span>
-            <span class="ms-2 fw-bold">Due Date: <span class="fw-normal">{{ task.dueDate | date:'dd-MM-yyyy':'UTC' }}</span></span>
-            <span class="ms-2 fw-bold">Priority: <span class="fw-normal">{{ task.priority }}</span></span>
+            <span class="ms-2 text-break fw-bold">
+              Title: <span class="fw-normal">{{ task.title }}</span>
+            </span>
+            <span class="ms-2 fw-bold">
+              Status: <span class="fw-normal">{{ task.completed ? 'Complete' : 'Incomplete' }}</span>
+            </span>
+            <span class="ms-2 fw-bold">
+              Due Date: <span class="fw-normal">{{ task.dueDate | date:'dd-MM-yyyy':'UTC' }}</span>
+            </span>
+            <span class="ms-2 fw-bold">
+              Priority: <span class="fw-normal">{{ task.priority }}</span>
+            </span>
           </div>
         </ng-container>
         <ng-template #editTemplate>
-          <input type="text" [(ngModel)]="editTitle" class="form-control" />
+          <div class="d-flex flex-column">
+            <input
+              type="text"
+              [(ngModel)]="editTitle"
+              class="form-control mb-2"
+              placeholder="Edit Title"
+            />
+            <input
+              type="date"
+              [(ngModel)]="editDueDate"
+              class="form-control mb-2"
+              placeholder="Edit Due Date"
+            />
+            <select [(ngModel)]="editPriority" class="form-select">
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
         </ng-template>
         <label [hidden]="editing" for="markCompleteIncomplete" class="form-check ms-2 mt-2">
           <span class="form-check-label">Mark as Complete</span>
@@ -18,7 +44,7 @@
             type="checkbox"
             id="markCompleteIncomplete"
             name="markCompleteIncomplete"
-            class="form-check-input "
+            class="form-check-input"
             [checked]="task.completed"
             (change)="toggleCompletion()"
           />
